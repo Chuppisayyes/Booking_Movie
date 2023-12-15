@@ -12,8 +12,8 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        {/* <Footer /> */}
-        <Routes>
+        <Footer />
+        {/* <Routes>
           <Route path="/" element={<MainLayout />}>
             <Route path="/" element={<Home />}></Route>
             <Route path="/details/:movieId" element={<Details />}></Route>
@@ -21,7 +21,7 @@ function App() {
             <Route path="/sign-up" element={<Signup />}></Route>
           </Route>
           <Route path="*" element={<NotFound />}></Route>
-        </Routes>
+        </Routes> */}
       </BrowserRouter>
     </>
   );
