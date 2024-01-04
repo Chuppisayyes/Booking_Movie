@@ -1,0 +1,10 @@
+.slick-arrow{
+    visibility: hidden;
+}
+.slick-slide > div {
+    margin: 0 10px;
+    width: 85%; 
+}
+.slick-list{
+    margin: 0 -20px;
+}

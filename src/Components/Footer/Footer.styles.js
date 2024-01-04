@@ -1,16 +1,15 @@
 import styled from "@emotion/styled";
 
-export const Button = styled.button``;
 export const BgFooter = styled.div`
   background-image: url(https://demo1.cybersoft.edu.vn/static/media/backapp.b46ef3a1.jpg);
-  height: 607px;
+
   background-size: contain;
 
   padding: 120px 0px 80px 0px;
 `;
 export const Container = styled.div`
   margin: auto;
-  width: 75%;
+  width: 60%;
   padding-bottom: 20px;
 `;
 export const ContentFooter = styled.div`
@@ -53,7 +52,7 @@ export const ButtonFooterA = styled.a`
   border: none;
   text-decoration: none;
   border-radius: 5px;
-  @media (max-width: 738px) {
+  @media (max-width: 769px) {
     padding: 10px 15px;
     background-color: #fb4226;
     border: none;
@@ -155,10 +154,10 @@ export const UlFooter = styled.ul`
   display: grid;
   grid-template-columns: repeat(3, 2fr);
   padding-left: 0;
-  row-gap: 20px;
+  gap: 20px;
   @media (max-width: 431px) {
     display: grid;
-    grid-template-columns: repeat(3, 2fr);
+    grid-template-columns: repeat(2, 2fr);
     padding-left: 0;
     gap: 20px;
   }
