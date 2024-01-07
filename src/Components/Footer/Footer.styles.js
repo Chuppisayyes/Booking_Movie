@@ -1,20 +1,29 @@
 import styled from "@emotion/styled";
 
-export const Button = styled.button``;
 export const BgFooter = styled.div`
   background-image: url(https://demo1.cybersoft.edu.vn/static/media/backapp.b46ef3a1.jpg);
-  height: 607px;
+
   background-size: contain;
+
   padding: 120px 0px 80px 0px;
 `;
 export const Container = styled.div`
   margin: auto;
-  width: 950px;
+  width: 60%;
   padding-bottom: 20px;
 `;
 export const ContentFooter = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 50% 50%;
+
+  @media (max-width: 1057px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+  }
+  @media (max-width: 586px) {
+    display: block;
+  }
 `;
 export const TitleFooter = styled.div`
   padding-top: 50px;
@@ -28,6 +37,9 @@ export const PhoneIMG = styled.img`
   padding: 0% 28%;
   display: block;
   width: 100%;
+  @media (max-width: 586px) {
+    display: none;
+  }
 `;
 export const TitleFooterP = styled.p`
   color: #fff;
@@ -40,29 +52,68 @@ export const ButtonFooterA = styled.a`
   border: none;
   text-decoration: none;
   border-radius: 5px;
+  @media (max-width: 984px) {
+    padding: 15px 25px;
+    background-color: #fb4226;
+    border: none;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  @media (max-width: 769px) {
+    padding: 10px 15px;
+    background-color: #fb4226;
+    border: none;
+    text-decoration: none;
+    border-radius: 5px;
+  }
 `;
 export const ButtonSpanTitle = styled.span`
   color: #fff;
   font-weight: 500;
   font-size: 18px;
   text-transform: uppercase;
+  @media (max-width: 984px) {
+    color: #fff;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  @media (max-width: 769px) {
+    color: #fff;
+    font-weight: 500;
+    font-size: 10px;
+    text-transform: uppercase;
+  }
 `;
 export const TitleFooterApp = styled.div`
   display: flex;
   margin-top: 30px;
   color: #fff;
   font-weight: 500;
+  @media (max-width: 1057px) {
+    display: flex;
+    justify-content: center;
+  }
 `;
 export const DecorationLink = styled.a`
   color: #fff;
 `;
 export const BannerPhone = styled.img`
   position: absolute;
-  width: 40%;
-  top: 0px;
-  margin-left: 143px;
-  margin-top: 10px;
+  width: 41%;
+  right: 30%;
   border-radius: 20px;
+  top: 10px;
+  @media (max-width: 1400px) {
+    position: absolute;
+    width: 41%;
+    right: 40%px;
+    border-radius: 20px;
+    top: 10px;
+  }
+  @media (max-width: 586px) {
+    display: none;
+  }
 `;
 export const PositionBanner = styled.div`
   position: relative;
@@ -74,15 +125,22 @@ export const BackgroundFooterBody = styled.div`
 export const GridFooter = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  column-gap: 100px;
+  @media (max-width: 976px) {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+  }
+  @media (max-width: 376px) {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+  }
 `;
 export const GridItemOne = styled.div`
   margin-top: 30px;
-  width: 250px;
 `;
 export const GridItemTwo = styled.div`
   margin-top: 30px;
-  width: 350px;
 `;
 export const GridItemThree = styled.div`
   margin-top: 30px;
@@ -107,11 +165,17 @@ export const LogoFooter = styled.img`
   width: 30px;
 `;
 export const UlFooter = styled.ul`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  left: 0px;
-  padding-left: 0px;
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  padding-left: 0;
+  gap: 20px;
+  @media (max-width: 376px) {
+    display: grid;
+    margin-right: 30px;
+    grid-template-columns: repeat(2, 2fr);
+    padding-left: 0;
+    gap: 20px;
+  }
 `;
 export const LiFooter = styled.li`
   list-style: none;
@@ -127,23 +191,16 @@ export const ContentFooterFlex = styled.div`
   display: flex;
 `;
 export const ContentFooterFlexA = styled.div`
-  flex-grow: 0;
-  max-width: 16, 666667%;
-  flex-basis: 16, 666667%;
+  width: 30%;
 `;
 export const ContentFooterFlexB = styled.div`
-  flex-grow: 0;
-  max-width: 66.666667%;
-  flex-basis: 66.666667%;
-  margin-left: 30px;
+  width: 120%;
 `;
 export const ContentFooterFlexC = styled.div`
-  flex-grow: 0;
-  max-width: 16, 666667%;
-  flex-basis: 16, 666667%;
+  width: 30%;
 `;
 export const ContentFooterFlexCImg = styled.img`
-  width: 150%;
+  width: 80%;
 `;
 export const ContentFooterFlexAImg = styled.img`
   width: 70%;

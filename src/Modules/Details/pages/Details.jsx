@@ -1,36 +1,31 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import ShowTime from "../component/ShowTime";
-import Overview from "../component/Overview";
 import { getMovieDetails } from "../../../Apis/cinemaAPI";
-
+import Overview from "../component/Overview";
+import ShowTime from "../component/ShowTime";
 export default function Details() {
+  const [movie, setMovie] = useState(null);
   const params = useParams();
-  const [movies, setMovie] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    const fectData = async () => {
+    const getMovieScheduleInfo = async () => {
       try {
-        const movie = await getMovieDetails(params.movieId);
-        setMovie(movie);
+        const movieScheduleInfo = await getMovieDetails(params.movieID);
+        setMovie(movieScheduleInfo);
       } catch (error) {
         console.error(error);
-      } finally {
-        setIsLoading(false);
       }
     };
-    fectData();
+    getMovieScheduleInfo();
   }, []);
-  if (isLoading) {
-    return <h1>loading...</h1>;
+  if (!movie) {
+    return;
   }
+  const { heThongRapChieu: showtime, ...movieDetails } = movie;
 
-  console.log(movies);
-  const { ...movieDetails } = movies;
   return (
-    <div>
-      <Overview movie={movieDetails} />
-      <ShowTime showTimes={movies.heThongRapChieu || []} />
+    <div style={{ backgroundColor: "#0A2028" }}>
+      <Overview movieDetails={movieDetails} />
+      <ShowTime showTimes={showtime} />
     </div>
   );
 }
