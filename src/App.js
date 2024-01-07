@@ -8,6 +8,7 @@ import Signin from "./Modules/auth/pages/Signin";
 import Signup from "./Modules/auth/pages/Signup";
 import MovieShowing from "./Modules/Home/Components/MovieShowing/MovieShowing";
 import ModalMovies from "./Components/Modals/ModalMovies";
+import ShowTime from "./Modules/Details/component/ShowTime";
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
         <Routes>
           <Route path="/" element={<MainLayout />}>
             <Route path="/" element={<Home />}></Route>
-            <Route path="/detail:movies"></Route>
+            <Route path="/details/:movieID" element={<Details />}></Route>
+            <Route path="*" element={<h1>not found</h1>}></Route>
           </Route>
         </Routes>
       </BrowserRouter>

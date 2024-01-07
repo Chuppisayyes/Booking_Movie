@@ -94,7 +94,7 @@ export default function MovieShowing() {
         <Slider {...settings}>
           {movies.map((movie) => {
             return (
-              <Card className="card">
+              <Card className="card" key={movie.maPhim}>
                 <CardImage>
                   <ImageMovie src={movie.hinhAnh} alt={movie.biDanh} />
                   <LayoutMovie></LayoutMovie>
@@ -102,7 +102,7 @@ export default function MovieShowing() {
                     <FaCirclePlay />
                   </ButtonTrailer>
                 </CardImage>
-                <ButtonBuyTicket onClick={() => navigate(`/detail/${movie.maPhim}`)}>Mua Vé</ButtonBuyTicket>
+                <ButtonBuyTicket onClick={() => navigate(`/details/${movie.maPhim}`)}>Mua Vé</ButtonBuyTicket>
                 <CardBottom className="pt-1">
                   <TitleMovieP>C18 </TitleMovieP>
                   <h5 style={{ fontWeight: "bold", marginLeft: 2 }}>{movie.tenPhim}</h5>

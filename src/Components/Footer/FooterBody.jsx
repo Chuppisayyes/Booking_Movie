@@ -34,7 +34,6 @@ export default function FooterBody() {
   const fectData = async () => {
     try {
       const data = await getSystemCinema();
-      console.log(data);
       setCinemas(data);
     } catch (error) {}
   };
@@ -63,7 +62,7 @@ export default function FooterBody() {
             </div>
             <UlFooter>
               {cinemas.map((cinema) => (
-                <LiFooter>
+                <LiFooter key={cinema.maHeThongRap}>
                   <a href="">
                     <LogoFooter src={cinema.logo} alt={cinema.biDanh} />
                   </a>

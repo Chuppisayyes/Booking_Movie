@@ -36,7 +36,7 @@ export const TitleH2 = styled.h2`
 export const PhoneIMG = styled.img`
   padding: 0% 28%;
   display: block;
-  width: 50%;
+  width: 100%;
   @media (max-width: 586px) {
     display: none;
   }
@@ -52,6 +52,13 @@ export const ButtonFooterA = styled.a`
   border: none;
   text-decoration: none;
   border-radius: 5px;
+  @media (max-width: 984px) {
+    padding: 15px 25px;
+    background-color: #fb4226;
+    border: none;
+    text-decoration: none;
+    border-radius: 5px;
+  }
   @media (max-width: 769px) {
     padding: 10px 15px;
     background-color: #fb4226;
@@ -65,10 +72,16 @@ export const ButtonSpanTitle = styled.span`
   font-weight: 500;
   font-size: 18px;
   text-transform: uppercase;
-  @media (max-width: 738px) {
+  @media (max-width: 984px) {
     color: #fff;
     font-weight: 500;
-    font-size: 13px;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  @media (max-width: 769px) {
+    color: #fff;
+    font-weight: 500;
+    font-size: 10px;
     text-transform: uppercase;
   }
 `;
@@ -87,20 +100,16 @@ export const DecorationLink = styled.a`
 `;
 export const BannerPhone = styled.img`
   position: absolute;
-  width: 30%;
-  top: 0px;
-  margin-left: 143px;
-  margin-top: 10px;
+  width: 41%;
+  right: 30%;
   border-radius: 20px;
-  @media (max-width: 1057px) {
+  top: 10px;
+  @media (max-width: 1400px) {
     position: absolute;
-    width: 40%;
-    top: 0px;
-    margin-left: 114px;
-    left: 0;
-    z-index: 10;
-    margin-top: 10px;
+    width: 41%;
+    right: 40%px;
     border-radius: 20px;
+    top: 10px;
   }
   @media (max-width: 586px) {
     display: none;
@@ -120,6 +129,11 @@ export const GridFooter = styled.div`
   @media (max-width: 976px) {
     display: grid;
     grid-template-columns: repeat(2, 2fr);
+  }
+  @media (max-width: 376px) {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
   }
 `;
 export const GridItemOne = styled.div`
@@ -152,11 +166,12 @@ export const LogoFooter = styled.img`
 `;
 export const UlFooter = styled.ul`
   display: grid;
-  grid-template-columns: repeat(3, 2fr);
+  grid-template-columns: repeat(2, 2fr);
   padding-left: 0;
   gap: 20px;
-  @media (max-width: 431px) {
+  @media (max-width: 376px) {
     display: grid;
+    margin-right: 30px;
     grid-template-columns: repeat(2, 2fr);
     padding-left: 0;
     gap: 20px;
