@@ -6,7 +6,6 @@ import Footer from "../Footer";
 export default function MainLayout() {
   return (
     <div>
-      MainLayout
       <Header />
       <Outlet />
       <Footer />
