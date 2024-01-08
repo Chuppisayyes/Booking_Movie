@@ -11,21 +11,30 @@ import {
 } from "./details.style";
 import { useState, useEffect } from "react";
 import dayjs from "dayjs";
-export default function ShowTime({ showTimes }) {
-  const [cinemas, setCinemas] = useState([]);
 
+export default function ShowTime({ showTimes }) {
+  const [isActive, setIsActive] = useState(false);
+  const [cinemas, setCinemas] = useState([]);
+  useEffect(() => {
+    setCinemas(showTimes[0].cumRapChieu);
+  }, []);
   const handleSelectCinemaSystem = (id) => {
     const cinemas = showTimes.find((item) => item.maHeThongRap === id)?.cumRapChieu;
-
     setCinemas(cinemas);
+    setIsActive(id);
   };
+
   return (
     <div style={{ paddingBottom: 30 }}>
       <Container>
         <DetailShowTime>
           <DetailShowTimeLeft>
             {showTimes.map((showTime) => (
-              <DetailButtonLogo key={showTime.maHeThongRap} onClick={() => handleSelectCinemaSystem(showTime.maHeThongRap)}>
+              <DetailButtonLogo
+                IsActive={isActive === showTime.maHeThongRap}
+                key={showTime.maHeThongRap}
+                onClick={() => handleSelectCinemaSystem(showTime.maHeThongRap)}
+              >
                 <DetailShowTimeLogo src={showTime.logo} alt={showTime.tenHeThongRap} />
               </DetailButtonLogo>
             ))}
