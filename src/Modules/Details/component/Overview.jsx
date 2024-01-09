@@ -40,7 +40,7 @@ export default function Overview({ movieDetails }) {
             <DetailLeftRight>
               <span>{movieDetails.ngayKhoiChieu}</span>
               <h4>{movieDetails.tenPhim}</h4>
-              <DetailLeftButton>Mua Vé</DetailLeftButton>
+              <DetailLeftButton href="#showTime">Mua Vé</DetailLeftButton>
             </DetailLeftRight>
           </DetailLeft>
           <DetailRight>

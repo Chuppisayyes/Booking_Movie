@@ -63,7 +63,9 @@ export const DetailLeftPosition = styled.div`
     }
   }
 `;
-export const DetailLeftButton = styled.button`
+export const DetailLeftButton = styled.a`
+  cursor: pointer;
+  text-decoration: none;
   padding: 5px 15px;
   background-color: #fb4226;
   color: #fff;

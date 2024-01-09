@@ -11,10 +11,11 @@ import {
 } from "./details.style";
 import { useState, useEffect } from "react";
 import dayjs from "dayjs";
-
+import { useNavigate } from "react-router";
 export default function ShowTime({ showTimes }) {
   const [isActive, setIsActive] = useState(false);
   const [cinemas, setCinemas] = useState([]);
+
   useEffect(() => {
     setCinemas(showTimes[0].cumRapChieu);
   }, []);
@@ -23,9 +24,9 @@ export default function ShowTime({ showTimes }) {
     setCinemas(cinemas);
     setIsActive(id);
   };
-
+  const navigate = useNavigate();
   return (
-    <div style={{ paddingBottom: 30 }}>
+    <div id="showTime" style={{ paddingBottom: 30 }}>
       <Container>
         <DetailShowTime>
           <DetailShowTimeLeft>
@@ -46,7 +47,9 @@ export default function ShowTime({ showTimes }) {
                   <DetailShowTimeRightContent key={cinema.maCumRap}>
                     <TitleNameCinemas>{cinema.tenCumRap}</TitleNameCinemas>
                     {cinema.lichChieuPhim.map((lichChieu) => (
-                      <DetailButtonTimeMovie>{dayjs(lichChieu.ngayChieuGioChieu).format("DD/MM/YYYY ~ hh:mm")}</DetailButtonTimeMovie>
+                      <DetailButtonTimeMovie onClick={() => navigate(`/Purchase/${lichChieu.maLichChieu}`)}>
+                        {dayjs(lichChieu.ngayChieuGioChieu).format("DD/MM/YYYY ~ hh:mm")}
+                      </DetailButtonTimeMovie>
                     ))}
                   </DetailShowTimeRightContent>
                 );

@@ -2,13 +2,18 @@ import baseAPI from "./baseApi";
 
 export async function getListSeat(Id) {
   try {
-    const getListSeat = baseAPI("/QuanLyDatVe/LayDanhSachPhongVe", {
+    const getListSeat = await baseAPI.get("/QuanLyDatVe/LayDanhSachPhongVe", {
       params: {
         MaLichChieu: Id,
       },
     });
-    return getListSeat.content.danhSachGhe;
+    return getListSeat.data.content;
   } catch (error) {
     throw error.response?.data?.content;
   }
+}
+export async function postTicketSeat(seat) {
+  try {
+    const postSeat = await baseAPI.post("/api/QuanLyDatVe/DatVe");
+  } catch (error) {}
 }
