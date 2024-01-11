@@ -1,7 +1,8 @@
 import React from "react";
 import "./ManageUser.scss";
-import Header from "../Header/Header";
+
 import InputFind from "../InputFind";
+import Header from "../Header";
 export default function ManageUser() {
   return (
     <div className="container-user-left">

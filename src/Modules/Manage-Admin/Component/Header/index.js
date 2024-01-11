@@ -1,2 +1,2 @@
-import Header from "./Header";
-export default Header;
+import HeaderManage from "./HeaderManage";
+export default HeaderManage;
