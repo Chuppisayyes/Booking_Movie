@@ -21,7 +21,7 @@ import {
   ButtonTrailer,
 } from "./MovieShowing.style";
 import ModalMovie from "../../../../Components/Modals/ModalMovies";
-
+import IsLoading from "../../../../Components/IsLoading/IsLoading";
 var settings = {
   dots: true,
   infinite: true,
@@ -64,16 +64,20 @@ var settings = {
 };
 
 export default function MovieShowing() {
+  const [isLoading, setIsLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [movies, setMovies] = useState([]);
   const [trailerMovie, settrailerMovie] = useState(null);
   useEffect(() => {
     const getMovies = async () => {
       try {
+        setIsLoading(true);
         const dataMovies = await getListOfFilms();
         setMovies(dataMovies);
       } catch (error) {
         console.error(error);
+      } finally {
+        setIsLoading(false);
       }
     };
     getMovies();
@@ -83,6 +87,9 @@ export default function MovieShowing() {
     settrailerMovie(trailer);
   };
   const navigate = useNavigate();
+  if (isLoading) {
+    return <IsLoading />;
+  }
   return (
     <div className="mb-5">
       <Container>

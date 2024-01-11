@@ -9,7 +9,7 @@ export default function InfoMovie({ infoMovie }) {
   console.log(selected);
   return (
     <InfoMovieSeat>
-      <div>
+      <div style={{ textAlign: "center", borderBottom: "1px solid gray", padding: "10px 0px", color: "green", fontWeight: "bold" }}>
         <div>{selected.total}VND</div>
       </div>
       <InfoMovieSeatItem>

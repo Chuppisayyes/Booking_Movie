@@ -12,6 +12,7 @@ import {
 import { useState, useEffect } from "react";
 import dayjs from "dayjs";
 import { useNavigate } from "react-router";
+import IsLoading from "../../../Components/IsLoading/IsLoading";
 export default function ShowTime({ showTimes }) {
   const [isActive, setIsActive] = useState(false);
   const [cinemas, setCinemas] = useState([]);
@@ -25,6 +26,7 @@ export default function ShowTime({ showTimes }) {
     setIsActive(id);
   };
   const navigate = useNavigate();
+
   return (
     <div id="showTime" style={{ paddingBottom: 30 }}>
       <Container>

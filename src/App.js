@@ -10,6 +10,9 @@ import MovieShowing from "./Modules/Home/Components/MovieShowing/MovieShowing";
 import ModalMovies from "./Components/Modals/ModalMovies";
 import ShowTime from "./Modules/Details/component/ShowTime";
 import Purchase from "./Modules/Purchase/page/Purchase";
+import ManageUser from "./Modules/Manage-Admin/Component/ManageUser/ManageUser";
+import ManageMovie from "./Modules/Manage-Admin/Component/ManageMovie/ManageMovie";
+import MainLayoutManage from "./Modules/Manage-Admin/Component/MainLayoutManage/MainLayoutManage";
 
 function App() {
   return (
@@ -21,6 +24,10 @@ function App() {
             <Route path="/details/:movieID" element={<Details />}></Route>
             <Route path="/Purchase/:Id" element={<Purchase />}></Route>
             <Route path="*" element={<h1>not found</h1>}></Route>
+          </Route>
+          <Route path="/manage-admin" element={<MainLayoutManage />}>
+            <Route path="/manage-admin/:manageUser" element={<ManageUser />}></Route>
+            <Route path="/manage-admin/:manageMovie" element={<ManageMovie />}></Route>
           </Route>
         </Routes>
       </BrowserRouter>

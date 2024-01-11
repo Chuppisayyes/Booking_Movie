@@ -18,15 +18,48 @@ export const Container = styled.div`
 `;
 export const ContentListSeat = styled.div`
   display: grid;
-  grid-template-columns: repeat(16, 40px);
+  grid-template-columns: repeat(16, 30px);
   gap: 10px;
+  @media (max-width: 1025px) {
+    display: grid;
+    grid-template-columns: repeat(10, 30px);
+    gap: 10px;
+  }
+  @media (max-width: 850px) {
+    display: grid;
+    grid-template-columns: repeat(8, 30px);
+    gap: 10px;
+  }
+  @media (max-width: 431px) {
+    display: grid;
+    grid-template-columns: repeat(5, 40px);
+    gap: 10px;
+  }
 `;
 export const PurchaseStyleDiv = styled.div`
   display: flex;
   justify-content: space-between;
-
   margin-top: 30px;
   margin-bottom: 30px;
+  @media (max-width: 1025px) {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  @media (max-width: 769px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @media (max-width: 431px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
 `;
 export const ButtonBuyMovie = styled.button`
   ${(props) =>
@@ -71,11 +104,11 @@ export const InfoButtonMovieVip = styled.div`
 `;
 export const InfoButtonMovieContent = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 100px);
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
 `;
 export const PurchaseContentRight = styled.div`
   display: flex;
-
   flex-direction: column;
   justify-content: center;
   align-items: center;
