@@ -14,6 +14,7 @@ import {
 } from "./details.style";
 import { FaStar } from "react-icons/fa";
 import StaticExample from "../../../Components/Modals/ModalMovies";
+import IsLoading from "../../../Components/IsLoading/IsLoading";
 
 export default function Overview({ movieDetails }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,7 +41,7 @@ export default function Overview({ movieDetails }) {
             <DetailLeftRight>
               <span>{movieDetails.ngayKhoiChieu}</span>
               <h4>{movieDetails.tenPhim}</h4>
-              <DetailLeftButton>Mua Vé</DetailLeftButton>
+              <DetailLeftButton href="#showTime">Mua Vé</DetailLeftButton>
             </DetailLeftRight>
           </DetailLeft>
           <DetailRight>

@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-
+import { css } from "@emotion/react";
 export const BackGroundDetails = styled.div``;
 
 export const Container = styled.div`
@@ -63,7 +63,9 @@ export const DetailLeftPosition = styled.div`
     }
   }
 `;
-export const DetailLeftButton = styled.button`
+export const DetailLeftButton = styled.a`
+  cursor: pointer;
+  text-decoration: none;
   padding: 5px 15px;
   background-color: #fb4226;
   color: #fff;
@@ -189,6 +191,7 @@ export const DetailShowTimeLogo = styled.img`
 `;
 
 export const DetailButtonLogo = styled.div`
+  position: relative;
   border-bottom: 1px solid gray;
   cursor: pointer;
   overflow: hidden;
@@ -197,12 +200,19 @@ export const DetailButtonLogo = styled.div`
   &:hover {
     background-color: #3498db;
     color: #fff;
-    transform: scale(1.1); /* Tăng kích thước khi hover */
+    transform: scale(1); /* Tăng kích thước khi hover */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     border-radius: 2px;
     overflow: hidden;
     border-bottom: 1px solid black;
   }
+  ${(props) =>
+    props.IsActive &&
+    css`
+      background-color: #3498db;
+      color: #fff;
+      border-bottom: 1px solid black;
+    `}
 `;
 export const TitleNameCinemas = styled.h3`
   font-size: 16px;

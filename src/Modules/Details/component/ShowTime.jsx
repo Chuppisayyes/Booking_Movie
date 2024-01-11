@@ -11,21 +11,33 @@ import {
 } from "./details.style";
 import { useState, useEffect } from "react";
 import dayjs from "dayjs";
+import { useNavigate } from "react-router";
+import IsLoading from "../../../Components/IsLoading/IsLoading";
 export default function ShowTime({ showTimes }) {
+  const [isActive, setIsActive] = useState(false);
   const [cinemas, setCinemas] = useState([]);
 
+  useEffect(() => {
+    setCinemas(showTimes[0].cumRapChieu);
+  }, []);
   const handleSelectCinemaSystem = (id) => {
     const cinemas = showTimes.find((item) => item.maHeThongRap === id)?.cumRapChieu;
-
     setCinemas(cinemas);
+    setIsActive(id);
   };
+  const navigate = useNavigate();
+
   return (
-    <div style={{ paddingBottom: 30 }}>
+    <div id="showTime" style={{ paddingBottom: 30 }}>
       <Container>
         <DetailShowTime>
           <DetailShowTimeLeft>
             {showTimes.map((showTime) => (
-              <DetailButtonLogo key={showTime.maHeThongRap} onClick={() => handleSelectCinemaSystem(showTime.maHeThongRap)}>
+              <DetailButtonLogo
+                IsActive={isActive === showTime.maHeThongRap}
+                key={showTime.maHeThongRap}
+                onClick={() => handleSelectCinemaSystem(showTime.maHeThongRap)}
+              >
                 <DetailShowTimeLogo src={showTime.logo} alt={showTime.tenHeThongRap} />
               </DetailButtonLogo>
             ))}
@@ -37,7 +49,9 @@ export default function ShowTime({ showTimes }) {
                   <DetailShowTimeRightContent key={cinema.maCumRap}>
                     <TitleNameCinemas>{cinema.tenCumRap}</TitleNameCinemas>
                     {cinema.lichChieuPhim.map((lichChieu) => (
-                      <DetailButtonTimeMovie>{dayjs(lichChieu.ngayChieuGioChieu).format("DD/MM/YYYY ~ hh:mm")}</DetailButtonTimeMovie>
+                      <DetailButtonTimeMovie onClick={() => navigate(`/Purchase/${lichChieu.maLichChieu}`)}>
+                        {dayjs(lichChieu.ngayChieuGioChieu).format("DD/MM/YYYY ~ hh:mm")}
+                      </DetailButtonTimeMovie>
                     ))}
                   </DetailShowTimeRightContent>
                 );
