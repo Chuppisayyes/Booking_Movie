@@ -1,21 +1,13 @@
 import React from "react";
 import "./ManageUser.scss";
-import { CiSearch } from "react-icons/ci";
+import Header from "../Header/Header";
+import InputFind from "../InputFind";
 export default function ManageUser() {
   return (
     <div className="container-user-left">
       <div className="manage-user-content">
-        <div className="manage-user-heading">
-          <button className="button-modal">Thêm</button>
-        </div>
-        <div className="manage-user-body">
-          <div className="manage-user-find">
-            <input placeholder="Tìm Kiếm Người Dùng" />
-            <div className="manage-user-iconFind">
-              <CiSearch width={50} />
-            </div>
-          </div>
-        </div>
+        <Header />
+        <InputFind />
         <div className="manage-user-footer">
           <div className="manage-showing">
             <table className="table">
