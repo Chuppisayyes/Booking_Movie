@@ -29,7 +29,7 @@
 }   
 .hamburger{
     position: absolute;
-  
+    
     right: 0;
     background: none;
     cursor: pointer;
@@ -48,7 +48,7 @@
     border-radius: 35px;
     height: 3px;
     width: 30px;
-    transition: 0.4s;
+    transition: all 0.4s;
 }
 .hamburger:hover span{
     margin: auto;
@@ -83,8 +83,7 @@
 .nav-content{
     grid-template-rows: 1fr;
     margin-top: 50px;
-   
-   
+    transition: 0.4s;
  }
  .nav-item{
     position: relative;
@@ -120,3 +119,7 @@
    height: 80px;
    margin-top: 10px;
  }
+.nav-info-user-none{
+    display: none;
+    transition: 0.4s;
+}

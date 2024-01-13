@@ -23,6 +23,7 @@ function App() {
             <Route path="/" element={<Home />}></Route>
             <Route path="/details/:movieID" element={<Details />}></Route>
             <Route path="/Purchase/:Id" element={<Purchase />}></Route>
+
             <Route path="*" element={<h1>not found</h1>}></Route>
           </Route>
           <Route path="/manage-admin" element={<MainLayoutManage />}>

@@ -22,3 +22,19 @@ export async function signupAPI(credential) {
     throw error.message;
   }
 }
+
+export async function getListUser() {
+  try {
+    const resp = await baseAPI.get("/QuanLyNguoiDung/LayDanhSachNguoiDung", {
+      params: {
+        maNhom: "GP09",
+      },
+    });
+    return resp.data.content;
+  } catch (error) {
+    if (error.response) {
+      throw error.response.data?.content;
+    }
+    throw error.message;
+  }
+}
