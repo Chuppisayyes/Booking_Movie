@@ -22,13 +22,12 @@ export default function SideBar() {
           </div>
         </div>
         <div className="nav-menu">
-          {isExpended && (
-            <div className="nav-info-user">
-              <img src="https://free.clipartof.com/855-Free-Clipart-Of-A-Male-Avatar.png" />
-              <p>name</p>
-              <p>email</p>
-            </div>
-          )}
+          <div className={isExpended ? "nav-info-user" : "nav-info-user-none"}>
+            <img src="https://free.clipartof.com/855-Free-Clipart-Of-A-Male-Avatar.png" />
+            <p>name</p>
+            <p>email</p>
+          </div>
+
           <div className="nav-content">
             <div className={isExpended ? "nav-item" : "nav-item nav-item-in"}>
               <div className="nav-icon">
