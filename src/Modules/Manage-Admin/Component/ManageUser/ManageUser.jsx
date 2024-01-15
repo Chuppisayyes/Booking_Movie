@@ -4,20 +4,29 @@ import { getListUser } from "../../../../Apis/userApi";
 import InputFind from "../InputFind";
 import Header from "../Header";
 import ModalUser from "../Modal/ModalUser";
+import { findUser } from "../../../../Apis/userApi";
 export default function ManageUser() {
   const [users, setUsers] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
+  const [editUser, setEditUser] = useState(null);
+
   const handleOpen = (value) => {
     setIsOpen(value);
   };
   const handleClose = (value) => {
     setIsOpen(value);
   };
+  const handleEdit = async (userName) => {
+    const resp = await findUser(userName);
+    const user = resp.find((user) => user.taiKhoan === userName);
+    setEditUser(user);
+    setIsOpen(true);
+  };
+
   useEffect(() => {
     const listUser = async () => {
       try {
         const resp = await getListUser();
-
         setUsers(resp);
       } catch (error) {
         console.error(error);
@@ -25,9 +34,10 @@ export default function ManageUser() {
     };
     listUser();
   }, []);
+
   return (
     <div className="container-user-left">
-      <ModalUser onOpen={isOpen} onClose={handleClose} />
+      <ModalUser onOpen={isOpen} onClose={handleClose} editUser={editUser} />
       <div className="manage-user-content">
         <Header onOpen={handleOpen} />
         <InputFind />
@@ -46,14 +56,16 @@ export default function ManageUser() {
               </thead>
               <tbody className="tbody">
                 {users.map((user) => (
-                  <tr className="tr-hover" key={users.taiKhoan}>
+                  <tr key={users.taiKhoan}>
                     <td>{user.taiKhoan}</td>
                     <td>{user.hoTen}</td>
                     <td>{user.email}</td>
                     <td>{user.soDT}</td>
                     <td>{user.matKhau}</td>
                     <td>
-                      <button className="btn btn-success">Edit</button>
+                      <button onClick={() => handleEdit(user.taiKhoan)} className="btn btn-success">
+                        Edit
+                      </button>
                       <button className="btn btn-danger">Delete</button>
                     </td>
                   </tr>

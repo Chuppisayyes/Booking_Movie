@@ -11,13 +11,14 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: "80%",
+
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
   p: 4,
 };
 
-export default function ModalUser({ onOpen, onClose }) {
+export default function ModalUser({ onOpen, onClose, editUser }) {
   return (
     <div>
       <Modal
@@ -28,10 +29,10 @@ export default function ModalUser({ onOpen, onClose }) {
       >
         <Box sx={style}>
           <div className="modalHeader">
-            <h4>Add</h4>
+            <h4>{editUser ? "edit" : "add"}</h4>
           </div>
           <div className="modalBody">
-            <FormUser />
+            <FormUser editUser={editUser} />
           </div>
         </Box>
       </Modal>
