@@ -1,0 +1,58 @@
+.jss1{
+    padding: 120px 0 80px 0;
+    background: url("https://tcdtist-tix-clone.vercel.app/static/media/backapp.b46ef3a1.jpg");
+    background-size: contain;
+    .jss2{
+    font-size: xx-large;
+    font-weight: 700;
+    margin-bottom: 20px;
+    }
+    .jss3{
+    font-size: medium;
+    margin-top: 45px;
+    margin-bottom: 30px;
+    }
+    .jss4{
+        text-decoration: none;
+        color: white;
+        border: none;
+        padding: 20px 32px;
+        font-size: medium;
+        margin-top: 16px;
+        font-weight: 700;
+        border-radius: 4px;
+        background-color: #fb4226;
+        display: inline-block;
+        &:hover{
+            background-color: rgb(175, 46, 26);
+        }
+    }
+    .jss5{
+        top: 0;
+        width: 100%;
+        display: block;
+        padding: 0 28%;
+        position: relative;
+        max-width: 100%;
+    }
+    .jss6{
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: block;
+        padding: 0 28%;
+        position: absolute;
+        max-width: 100%;
+    }
+    .jss7{
+        border-radius: 30px;
+        width: 100%;
+        height: 110%;
+        
+        margin: auto;
+    }
+    .jss8{
+        padding: 0 !important;
+    }
+}

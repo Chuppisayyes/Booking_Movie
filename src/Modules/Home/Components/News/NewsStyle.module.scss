@@ -1,0 +1,45 @@
+.jss1{
+    height: 180px;
+    display: flex;
+    overflow: hidden;
+    flex-grow: 1;
+    background-color: #fff;
+    :global(.MuiTab-textColorPrimary.Mui-selected) {
+        color: #fb4226;
+        font-size: 22px;
+    }
+    .jss2{
+        margin-bottom: 20px;
+        :global(.MuiTabs-indicator) {
+            background-color: #fb4226 !important;
+        
+        }
+    }
+    .jss3{
+        font-size: 18px;
+        text-transform: none;
+    }
+    .jss4{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .jss5{
+        color: #949494;
+    border: 1px solid #949494;
+    display: block;
+    padding: 13px 24px;
+    font-size: 14px;
+    margin-top: 32px;
+    transition: all .2s;
+    border-radius: 4px;
+    margin-bottom: 35px;
+      &:hover{
+            color: #fff;
+            background: #fb4226;
+            border-color: #fb4226;
+        }
+    }
+    
+    
+}
