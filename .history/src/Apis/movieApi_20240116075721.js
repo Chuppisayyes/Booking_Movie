@@ -13,7 +13,7 @@ export async function getListOfFilms() {
   try {
     const res = await baseAPI.get("/QuanLyPhim/LayDanhSachPhim", {
       params: {
-        maNhom: "GP09",
+        maNhom: "GP06",
       },
     });
     return res.data.content;

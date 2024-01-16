@@ -64,7 +64,13 @@ export const PurchaseStyleDiv = styled.div`
 export const ButtonBuyMovie = styled.button`
   ${(props) =>
     css`
-      background-color: ${props.isSelected ? "green" : props.daDat ? "gray" : props.loaiGhe === "Vip" ? "#ffa500" : "#e9e9e9"};
+      background-color: ${props.isSelected
+        ? "green"
+        : props.daDat
+        ? "gray"
+        : props.loaiGhe === "Vip"
+        ? "#ffa500"
+        : "#e9e9e9"};
     `}
   font-size: 14px;
   text-align: center;

@@ -18,7 +18,7 @@ export default function Header() {
   const navigate = useNavigate()
   const { currentUser, handleSignout } = useUserContext();
 
-  const pages = ["Lịch Chiếu", "Cụm Rạp", "Tin Tức", "Ứng Dụng"];
+  const pages = ["Lịch Chiếu", "Cụm Rạp", "Tin Tức", "Ứng Dụng", ""];
   const [isOpenDrawer, setisOpenDrawer] = useState(false)
   const handleDrawerToggle = () => {
     setisOpenDrawer(!isOpenDrawer);

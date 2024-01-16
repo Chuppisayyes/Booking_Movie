@@ -1,0 +1,44 @@
+.jss1{
+    background-color: rgba(255,255,255, .95);
+}
+.jss2{
+    width: auto;
+    height: 50px;
+    cursor: pointer;
+}
+
+.jss3{
+    color: #000;
+    cursor: pointer;
+    padding: 0 16px;
+    transition: all .3s;
+    text-decoration: none;
+    display: inline-block;
+    &:hover{
+        color: #fb4226;
+    }
+}
+.jss4{
+    color: #9e9e9e;
+    cursor: pointer;
+    display: flex;
+    padding: 0px 8px;
+    transition: all .3s;
+    align-items: center;
+    text-decoration: none;
+    &:hover{
+        color: #fb4226;
+    }
+}
+.jss5{
+    width: 32px;
+    height: 32px;
+    margin: 0 8px;
+}
+
+.jss6{
+    cursor: pointer;
+}
+.jss7{
+    padding-right: 99px;
+}
