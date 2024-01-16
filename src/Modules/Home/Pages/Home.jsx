@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import Banner from "../Components/Banner/Banner";
+import Banner from "../Components/Banner-FIX/Banner";
 import MovieShowing from "../Components/MovieShowing/MovieShowing";
 import Cinema from "../Components/Cinema/CinemaSystems";
 import Application from "../Components/Application/Application";

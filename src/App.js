@@ -7,9 +7,10 @@ import MainLayoutManage from "./Modules/Manage-Admin/Component/MainLayoutManage/
 import ProtectedRoute from "./routers/ProtectedRoute/ProtectedRoute";
 import UserProvider from "./Components/Context/UserContext.jsx";
 import MainLayout from "./Components/MainLayout/MainLayout.jsx";
-import Login from './Modules/Auth/LogIn/Pages/LogIn.jsx'
-import SignUp from './Modules/Auth/SignUp/Pages/SignUp.jsx'
+import Login from "./Modules/Auth/LogIn/Pages/LogIn.jsx";
+import SignUp from "./Modules/Auth/SignUp/Pages/SignUp.jsx";
 import AdminMovie from "./Modules/AdminMovie/AdminMovie.jsx";
+import AdminProtextedRoute from "./routers/AdminProtectedRoute.jsx";
 
 function App() {
   return (
@@ -26,9 +27,11 @@ function App() {
             </Route>
             <Route path="*" element={<h1>not found</h1>}></Route>
           </Route>
-          <Route path="/manage-admin" element={<MainLayoutManage />}>
-            <Route path="/manage-admin/User" element={<ManageUser />}></Route>
-            <Route path="/manage-admin/Movie" element={<AdminMovie />}></Route>
+          <Route path="/admin" element={<AdminProtextedRoute />}>
+            <Route path="/admin" element={<MainLayoutManage />}>
+              <Route path="/admin/User" element={<ManageUser />}></Route>
+              <Route path="/admin/Movie" element={<AdminMovie />}></Route>
+            </Route>
           </Route>
         </Routes>
       </BrowserRouter>
