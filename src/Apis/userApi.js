@@ -7,30 +7,29 @@ export const signin = async (payload) => {
   } catch (error) {
     throw error.response.data?.content;
   }
-}
+};
 export const signup = async (payload) => {
   try {
     const response = await baseAPI.post("/QuanLyNguoiDung/DangKy", payload);
     return response.data?.content;
   } catch (error) {
-    alert(error.response.data?.content)
+    alert(error.response.data?.content);
     throw error.response.data?.content;
   }
-}
+};
 export const getUserInfor = async (taiKhoan) => {
   try {
     const response = await baseAPI.get("/QuanLyNguoiDung/LayDanhSachNguoiDungPhanTrang", {
       params: {
         MaNhom: "GP06",
         tuKhoa: taiKhoan,
-      }
+      },
     });
-    return response.data?.content
-
+    return response.data?.content;
   } catch (error) {
-    throw error.response.data
+    throw error.response.data;
   }
-}
+};
 export async function getListUser() {
   try {
     const resp = await baseAPI.get("/QuanLyNguoiDung/LayDanhSachNguoiDung", {
@@ -53,67 +52,59 @@ export const getUserList = async (page) => {
         soTrang: page,
         MaNhom: "GP06",
         soPhanTuTrenTrang: 3,
-      }
+      },
     });
-    return response.data?.content
-
+    return response.data?.content;
   } catch (error) {
-    throw error.response.data
+    throw error.response.data;
   }
-}
+};
 export const deleteUser = async (taiKhoan) => {
   try {
-      const response = await baseAPI.delete("/QuanLyNguoiDung/XoaNguoiDung", {
-          params: {
-              TaiKhoan: taiKhoan
-          }
-      })
+    const response = await baseAPI.delete("/QuanLyNguoiDung/XoaNguoiDung", {
+      params: {
+        TaiKhoan: taiKhoan,
+      },
+    });
+    return response.data?.content;
   } catch (error) {
-      throw error.response.data
+    throw error.response.data;
   }
-}
+};
 export const updateUser = async (taiKhoan) => {
   try {
-      const response = await baseAPI.post("/QuanLyNguoiDung/CapNhatThongTinNguoiDung", taiKhoan)
-      return response.data.content
+    const response = await baseAPI.post("/QuanLyNguoiDung/CapNhatThongTinNguoiDung", taiKhoan);
+    return response.data.content;
   } catch (error) {
-      alert(error.response.data.content)
-      throw error.response.data.content
+    alert(error.response.data.content);
+    throw error.response.data.content;
   }
-}
-export const updateUserInfor = async (taiKhoan) => {
-  try {
-      const response = await baseAPI.put("/QuanLyNguoiDung/CapNhatThongTinNguoiDung", taiKhoan)
-      return response.data.content
-  } catch (error) {
-      alert(error.response.data.content)
-      throw error.response.data.content
-  }
-}
+};
+
 export const searchUserList = async (searchTerm, page) => {
   try {
-      const response = await baseAPI.get("QuanLyNguoiDung/TimKiemNguoiDungPhanTrang", {
-          params: {
-              soTrang: page,
-              MaNhom: "GP06",
-              tuKhoa: searchTerm,
-              soPhanTuTrenTrang: 3
-          }
-      })
-      return response.data.content
+    const response = await baseAPI.get("QuanLyNguoiDung/TimKiemNguoiDungPhanTrang", {
+      params: {
+        soTrang: page,
+        MaNhom: "GP06",
+        tuKhoa: searchTerm,
+        soPhanTuTrenTrang: 3,
+      },
+    });
+    return response.data.content;
   } catch (error) {
-      throw error.response.data
+    throw error.response.data;
   }
-}
-export async function addUser() {
+};
+export async function addUser(user) {
   try {
-    const reps = await baseAPI.post("/QuanLyNguoiDung/ThemNguoiDung");
+    const reps = await baseAPI.post("/QuanLyNguoiDung/ThemNguoiDung", user);
     return reps.data.content;
   } catch (error) {
     if (error.content) {
       throw error.response.data?.content;
     }
-    throw error?.message;
+    alert(error?.message);
   }
 }
 export async function findUser(userName) {
@@ -128,7 +119,7 @@ export async function findUser(userName) {
     if (error.response) {
       throw error.response?.data?.content;
     }
-    throw error.message;
+    throw error.content;
   }
 }
 export async function getListUserPagination(pages, sophantutrang) {
