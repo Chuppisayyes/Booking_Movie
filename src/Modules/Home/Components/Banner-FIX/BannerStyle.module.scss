@@ -1,0 +1,199 @@
+.dotsBanner{
+    position: absolute;
+    margin-top: -7px;
+    bottom: 60px;
+    display: block;
+    width: 100%;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    li{
+        position: relative;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin: 0 5px;
+        padding: 0;
+        cursor: pointer;
+        button{
+            font-size: 0;
+            line-height: 0;
+            display: block;
+            width: 20px;
+            height: 20px;
+            padding: 5px;
+            cursor: pointer;
+            color: #afafaf;
+            border: 0;
+            outline: none;
+            background: transparent;
+        }
+        button:before{
+            font-family: 'slick';
+            font-size: 14px;
+            line-height: 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            content: '•';
+            text-align: center;
+            fill: currentColor;
+            opacity: 0.75;
+        }
+    }
+
+}
+.dotsBanner :global(li.slick-active) button:before{
+    color: red;
+    
+}
+.jss13{
+    top: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    opacity: 1;
+    position: absolute;
+    transition: all 0.3s;
+    overflow: hidden;
+    border-radius: 4px;
+    }
+.jss0{
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    &:hover{
+        .jss14{
+            opacity: 1;
+        }
+    }
+    
+    .jss14{   
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    width: 90px;
+    border: none;
+    height: 90px;
+    z-index: 3;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    background: transparent;
+        &:hover{
+            opacity: 0.7;
+        }
+    }
+    .jss15{
+        width: 100%;
+        cursor: pointer;
+    }
+}
+
+.jss1{
+    height: 100%;
+    padding: 20px;
+    font-weight: 500 !important;
+    justify-content: space-around;
+    &::before{
+        right: 0px !important;
+        width: 1px;
+        height: 60%;
+        background-color: #eeeeee;
+        bottom: 12px !important;
+    }
+    &:hover::before{
+        border-bottom: none !important
+    }
+    &::after{
+        border-bottom: 2px solid #fb4226 !important
+    }
+}
+
+.jss2{
+    left: 50%;
+    width: 78% !important;
+    bottom: 50px;
+    height: 80px;
+    position: absolute;
+    transform: translate(-50%,50%);
+    
+}
+.jss4{
+    height: auto;
+    max-width: 2400px !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 50px !important;
+}
+
+.jss3{
+    z-index: 2;
+    height: 100%;
+    box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+    border-radius: 5px;
+    background-color: #fff;
+}
+.jss5{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    justify-content: center;
+}
+.jss6{
+    &:hover{
+        background-color: rgb(175, 46, 26) !important;
+    }
+}
+.jss7{
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    height: 800px;
+}
+.jss8{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    height: 100%;
+}
+.jss9{
+    top: 50%;
+    color: white;
+    cursor: pointer;
+    margin: 0 10px;
+    position: relative;
+    font-size: 30px;
+    transition: 200ms;
+    display: inline-flex;
+    align-items: center;
+    padding: 12px !important;
+    .jss10{
+        width: 100%;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        align-items: inherit;
+        justify-content: inherit;
+        user-select: none;
+        .jss11{
+            width: 100%;
+            color: #9e9e9e;
+            font-size: 50px;
+        }
+    }
+    
+}
+
+.jss12{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    height: 100%;
+}
