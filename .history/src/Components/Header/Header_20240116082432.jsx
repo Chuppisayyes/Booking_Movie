@@ -77,7 +77,7 @@ export default function Header() {
             <Grid item container justifyContent="flex-end" sx={{ display: { xs: 'none', lg: 'flex' } }} lg={4} >
               {currentUser ?
                 <a className={style.jss4} lg="6" item="true" onClick={() => navigate("/account")}>
-                  <img src="https://scontent-hkg1-2.xx.fbcdn.net/v/t39.30808-1/404931285_3568833133329150_7685244699268670578_n.jpg?stp=cp6_dst-jpg_p200x200&_nc_cat=104&ccb=1-7&_nc_sid=5740b7&_nc_eui2=AeFWqGgOizBCrBmF1XQWrkhNb3ARluray7RvcBGW6trLtOH0lpff907-sjIbSnZuzzOU2LN9UlWFyAV4UT6XYPbj&_nc_ohc=YVdmilhJeFAAX8Rgyxw&_nc_ht=scontent-hkg1-2.xx&oh=00_AfBsqT4Btft40gdIHuIUAo0aMG4HzFQxvDsvGzOAm1WBbQ&oe=65AA916B" className={style.jss5} />
+                  <img src="./image/avt.jpg" className={style.jss5} />
                   <Typography
                     variant="h3"
                     sx={{ fontSize: 16, fontWeight: 500 }}>{currentUser.hoTen}</Typography>

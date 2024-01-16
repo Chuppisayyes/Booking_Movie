@@ -13,7 +13,7 @@ export default function Home() {
       <MovieShowing />
       <Cinema/>
       <News/>
-      {/* <Application /> */}
+      <Application />
     </div>
   )
 }
