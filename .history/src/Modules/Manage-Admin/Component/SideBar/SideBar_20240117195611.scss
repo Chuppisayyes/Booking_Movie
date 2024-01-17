@@ -1,0 +1,132 @@
+.containerNavBar{
+    height: 100vh;
+    border: 1px solid gray;
+    width: 300px;
+    position: relative;
+    background-color: black;
+    color: #fff;
+    transition: all 0.4s;
+    // border-radius: 0px 10px 10px 0px;
+}
+.containerNavBarNX{
+    width: 85px;
+}
+.nav-upper, .nav-menu ,.nav-item, .nav-content, .nav-brand{
+    display: grid;
+}
+
+.nav-brand{
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+    height: 75px;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    background-color: #fff;
+}
+.nav-brand img{
+    width: 150px;
+    height: 50px;
+}   
+.hamburger{
+    position: absolute;
+    
+    right: 0;
+    background: none;
+    cursor: pointer;
+    margin: auto -35px;
+    background-color: gray;
+    border: 2px solid white;
+    padding: 20px;
+    border-radius: 90px;
+    height: 71px;
+    width: 74px;
+}
+.hamburger span{
+    display: block;
+    margin-top: 5px;
+    background-color: white;
+    border-radius: 35px;
+    height: 3px;
+    width: 30px;
+    transition: all 0.4s;
+}
+.hamburger:hover span{
+    margin: auto;
+}
+.hamburger-in:hover span:nth-child(1){
+   width: 25px;
+   transform: translate(-3px, 18px) rotate(30deg);
+}
+.hamburger-in:hover span:nth-child(2){
+   display: none;
+ }
+ .hamburger-in:hover span:nth-child(3){
+    width: 25px;
+   transform: translate(-3px, 2px) rotate(-30deg);
+}
+
+.hamburger-out:hover span:nth-child(1){
+    width: 25px;
+    transform: translate(3px, 18px) rotate(-30deg);
+ }
+ .hamburger-out:hover span:nth-child(2){
+    display: none;
+  }
+  .hamburger-out:hover span:nth-child(3){
+     width: 25px;
+    transform: translate(3px, 2px) rotate(30deg);
+ }
+.nav-menu{
+   
+    margin-top : 30px;
+}
+.nav-content{
+    grid-template-rows: 1fr;
+    margin-top: 50px;
+    transition: 0.4s;
+    margin-top: 0px;
+    ma
+ }
+ .nav-item{
+    position: relative;
+    height: 57px;
+    width: 16rem;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    border-radius: 20px;
+    margin: auto 20px;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+ }
+ .nav-item-in{
+    margin: auto;
+    width: 2.5em;
+ }
+ .nav-item .nav-icon{
+    margin: auto 10px;
+    width: 30px;
+    height: 30px;
+ }
+ .nav-item:hover{
+    background-color: red;
+ }
+ .nav-info-user img{
+    width: 50px;
+    height: 50px;
+ }
+ .nav-info-user{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   color: white;
+   height: 130px;
+   margin-top: 10px;
+   
+ }
+.nav-info-user-none{
+    display: none;
+    transition: 0.4s;
+}
