@@ -18,7 +18,7 @@ const style = {
   p: 4,
 };
 
-export default function ModalUser({ onOpen, onClose, editUser }) {
+export default function ModalUser({ onOpen, onClose, editUser, resetUser, reload }) {
   return (
     <div>
       <Modal
@@ -32,7 +32,7 @@ export default function ModalUser({ onOpen, onClose, editUser }) {
             <h4>{editUser ? "edit" : "add"}</h4>
           </div>
           <div className="modalBody">
-            <FormUser editUser={editUser} />
+            <FormUser reload={reload} editUser={editUser} onClose={onClose} resetUser={resetUser} />
           </div>
         </Box>
       </Modal>

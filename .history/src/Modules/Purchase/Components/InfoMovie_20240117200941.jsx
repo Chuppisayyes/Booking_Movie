@@ -5,7 +5,6 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 import { addTicket } from "../../../Apis/listSeat";
 import { purchase } from "../../../redux/movieTicketSlice"
-import { useNavigate } from "react-router";
 export default function InfoMovie({ infoMovie }) {
   const selected = useSelector((state) => {
     return state.ticket;
@@ -26,7 +25,7 @@ export default function InfoMovie({ infoMovie }) {
       )
       dispatch(purchase())
       queryClient.invalidateQueries({ queryKey: ['seatItem'] })
-      navigate("/account")
+
     }
   })
 

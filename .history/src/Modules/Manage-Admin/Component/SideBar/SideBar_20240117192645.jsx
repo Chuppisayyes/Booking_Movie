@@ -3,11 +3,15 @@ import { FaUser } from "react-icons/fa";
 import { IoMdFilm } from "react-icons/io";
 import { IoLogOutOutline } from "react-icons/io5";
 import "./SideBar.scss";
+<<<<<<< HEAD
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useUserContext } from "../../../../Components/Context/UserContext";
 export default function SideBar() {
   const [isExpended, setisExpended] = useState(false);
+  const storedData = JSON.parse(localStorage.getItem("currentUser"));
+
   const navigate = useNavigate();
   const { currentUser, handleSignout } = useUserContext();
   const handleSignoutSwal = () => {
@@ -27,6 +31,13 @@ export default function SideBar() {
       }
     })
   }
+=======
+import { Link } from "react-router-dom";
+export default function SideBar() {
+  const [isExpended, setisExpended] = useState(false);
+  const storedData = JSON.parse(localStorage.getItem("currentUser"));
+
+>>>>>>> 9bc64714eeef07375b6aad673f226d167baf7c12
   return (
     <div className={isExpended ? "containerNavBar" : "containerNavBar containerNavBarNX"}>
       <div className="nav-upper">
@@ -51,7 +62,6 @@ export default function SideBar() {
             <p>{currentUser.hoTen}</p>
             <p>{currentUser.email}</p>
           </div>
-
           <div className="nav-content">
             <div className={isExpended ? "nav-item" : "nav-item nav-item-in"}>
               <div className="nav-icon" onClick={() => navigate("/manage-admin/User")}>

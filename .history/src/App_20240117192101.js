@@ -11,8 +11,11 @@ import Login from "./Modules/Auth/LogIn/Pages/LogIn.jsx";
 import SignUp from "./Modules/Auth/SignUp/Pages/SignUp.jsx";
 import AdminMovie from "./Modules/AdminMovie/AdminMovie.jsx";
 import AdminProtextedRoute from "./routers/AdminProtectedRoute.jsx";
+<<<<<<< HEAD
 import UserInfor from "./Modules/Home/Components/UserInfor/UserInfor.jsx";
 import MovieShowtimes from "./Modules/AdminMovie/MovieShowtimes/MovieShowtimes.jsx";
+=======
+>>>>>>> 9bc64714eeef07375b6aad673f226d167baf7c12
 
 function App() {
   return (
@@ -30,11 +33,18 @@ function App() {
             </Route>
             <Route path="*" element={<h1>not found</h1>}></Route>
           </Route>
+<<<<<<< HEAD
           <Route element={<AdminProtextedRoute />}>
             <Route path="/manage-admin" element={<MainLayoutManage />}>
               <Route path="/manage-admin/User" element={<ManageUser />}></Route>
               <Route path="/manage-admin/Movie" element={<AdminMovie />}></Route>
               <Route path="/manage-admin/showtimes/:movieId" element={<MovieShowtimes />} />
+=======
+          <Route path="/admin" element={<AdminProtextedRoute />}>
+            <Route path="/admin" element={<MainLayoutManage />}>
+              <Route path="/admin/User" element={<ManageUser />}></Route>
+              <Route path="/admin/Movie" element={<AdminMovie />}></Route>
+>>>>>>> 9bc64714eeef07375b6aad673f226d167baf7c12
             </Route>
           </Route>
         </Routes>

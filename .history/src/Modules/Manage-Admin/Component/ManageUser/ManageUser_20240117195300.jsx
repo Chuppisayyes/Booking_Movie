@@ -60,7 +60,7 @@ export default function ManageUser() {
   const listUser = async (pages) => {
     try {
       const reps = await getListUserPagination(pages, 8);
-      // console.log("reloadEdit");
+      console.log("reloadEdit");
       setUsers(reps.items);
       setTotalPages(reps.totalPages);
     } catch (error) {

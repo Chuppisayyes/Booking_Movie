@@ -25,8 +25,6 @@ export const getUserInfor = async () => {
     throw error.response.data;
   }
 };
-
-
 export async function getListUser() {
   try {
     const resp = await baseAPI.get("/QuanLyNguoiDung/LayDanhSachNguoiDung", {
@@ -135,14 +133,5 @@ export async function getListUserPagination(pages, sophantutrang) {
       throw error.response?.data?.content;
     }
     throw error.message;
-  }
-}
-export const updateUserInfor = async (taiKhoan) => {
-  try {
-      const response = await baseAPI.put("/QuanLyNguoiDung/CapNhatThongTinNguoiDung", taiKhoan)
-      return response.data.content
-  } catch (error) {
-      alert(error.response.data.content)
-      throw error.response.data.content
   }
 }

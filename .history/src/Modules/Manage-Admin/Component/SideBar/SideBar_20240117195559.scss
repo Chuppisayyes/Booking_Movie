@@ -83,8 +83,9 @@
 }
 .nav-content{
     grid-template-rows: 1fr;
+    margin-top: 50px;
     transition: 0.4s;
-    margin-top: 60px;
+    margin-top: 0px;
  }
  .nav-item{
     position: relative;
@@ -94,7 +95,7 @@
     align-items: center;
     text-transform: uppercase;
     border-radius: 20px;
-    margin: auto 20px;
+    margin: au 20px;
     color: #fff;
     text-decoration: none;
     cursor: pointer;

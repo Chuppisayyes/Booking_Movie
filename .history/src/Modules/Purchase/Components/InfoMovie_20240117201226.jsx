@@ -26,7 +26,7 @@ export default function InfoMovie({ infoMovie }) {
       )
       dispatch(purchase())
       queryClient.invalidateQueries({ queryKey: ['seatItem'] })
-      navigate("/account")
+      navigate("/Purchase/:Id")
     }
   })
 

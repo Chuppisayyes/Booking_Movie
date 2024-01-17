@@ -11,8 +11,11 @@ import Login from "./Modules/Auth/LogIn/Pages/LogIn.jsx";
 import SignUp from "./Modules/Auth/SignUp/Pages/SignUp.jsx";
 import AdminMovie from "./Modules/AdminMovie/AdminMovie.jsx";
 import AdminProtextedRoute from "./routers/AdminProtectedRoute.jsx";
+<<<<<<< HEAD
 import UserInfor from "./Modules/Home/Components/UserInfor/UserInfor.jsx";
 import MovieShowtimes from "./Modules/AdminMovie/MovieShowtimes/MovieShowtimes.jsx";
+=======
+>>>>>>> 9bc64714eeef07375b6aad673f226d167baf7c12
 
 function App() {
   return (

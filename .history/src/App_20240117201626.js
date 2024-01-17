@@ -31,7 +31,7 @@ function App() {
             <Route path="*" element={<h1>not found</h1>}></Route>
           </Route>
           <Route element={<AdminProtextedRoute />}>
-            <Route path="/manage-admin" element={<MainLayoutManage />}>
+            <Route path="/" element={<MainLayoutManage />}>
               <Route path="/manage-admin/User" element={<ManageUser />}></Route>
               <Route path="/manage-admin/Movie" element={<AdminMovie />}></Route>
               <Route path="/manage-admin/showtimes/:movieId" element={<MovieShowtimes />} />

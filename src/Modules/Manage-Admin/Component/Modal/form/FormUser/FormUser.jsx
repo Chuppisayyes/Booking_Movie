@@ -5,8 +5,10 @@ import "./FormUser.scss";
 import MenuItem from "@mui/material/MenuItem";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { object, string, number } from "yup";
-export default function FormUser({ editUser }) {
+import { object, string } from "yup";
+import { useToast } from "../../../Toast/ToastContext";
+import { updateUser, addUser } from "../../../../../../Apis/userApi";
+export default function FormUser({ reload, editUser, onClose, resetUser }) {
   const validationSchema = object({
     taiKhoan: string().required("Tài Khoản Không Được Để Trống"),
     hoTen: string()
@@ -24,6 +26,7 @@ export default function FormUser({ editUser }) {
     maNhom: string().required("Không Được Để Trống").max(4, "Tối Đa 4 ký tự"),
     maLoaiNguoiDung: string().required("Loại Người Dùng Không Được Để Trống"),
   });
+  const { showToast } = useToast();
   const currencies = [
     {
       value: "KhachHang",
@@ -47,7 +50,7 @@ export default function FormUser({ editUser }) {
       matKhau: "",
       email: "",
       soDT: "",
-      maNhom: "GP09",
+      maNhom: "GP06",
       maLoaiNguoiDung: "",
       hoTen: "",
     },
@@ -60,14 +63,50 @@ export default function FormUser({ editUser }) {
       matKhau: editUser?.matKhau,
       email: editUser?.email,
       soDT: editUser?.soDT,
-      maNhom: "GP09",
-      maLoaiNguoiDung: editUser.maLoaiNguoiDung,
+      maNhom: "GP06",
+      maLoaiNguoiDung: editUser?.maLoaiNguoiDung,
       hoTen: editUser?.hoTen,
     });
   }, [editUser]);
-  const handleAddUser = (user) => {
-    console.log(user);
+
+  const handleAdd = async (user) => {
+    try {
+      const reps = await addUser(user);
+      if (reps) {
+        showToast("Add User Successs");
+      } else {
+        showToast("Add User Fail");
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
+  const handleUpdate = async (user) => {
+    try {
+      const reps = await updateUser(user);
+      if (reps) {
+        showToast("Update User Successs");
+      } else {
+        showToast("Update User Fail");
+      }
+    } catch (error) {
+      console.error(error);
+    } finally {
+      resetUser(null);
+    }
+  };
+
+  const handleAddUser = (user) => {
+    if (editUser) {
+      handleUpdate(user);
+      onClose(false);
+    } else if (!editUser) {
+      handleAdd(user);
+    }
+    onClose(false);
+    reload(1);
+  };
+
   return (
     <Box
       onSubmit={handleSubmit(handleAddUser)}
@@ -133,7 +172,7 @@ export default function FormUser({ editUser }) {
           label="Mã Nhóm"
           helperText={errors?.maNhom?.message}
           variant="standard"
-          placeholder="GP09"
+          placeholder="GP06"
         />
       </div>
       <div className="form-item">
@@ -165,6 +204,7 @@ export default function FormUser({ editUser }) {
               label="Loại Người Dùng"
               helperText={errors?.maLoaiNguoiDung?.message}
               variant="standard"
+              defaultValue=""
             >
               {currencies.map((option) => (
                 <MenuItem key={option.value} value={option.value}>
@@ -175,9 +215,16 @@ export default function FormUser({ editUser }) {
           )}
         />
       </div>
-      <button style={{ marginTop: "20px" }} type="submit" className="btn btn-success">
-        Add
-      </button>
+      {editUser && (
+        <button style={{ marginTop: "20px" }} type="submit" className="btn btn-success">
+          update
+        </button>
+      )}
+      {!editUser && (
+        <button style={{ marginTop: "20px" }} type="submit" className="btn btn-success">
+          Add
+        </button>
+      )}
     </Box>
   );
 }

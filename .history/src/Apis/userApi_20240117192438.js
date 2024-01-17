@@ -137,12 +137,3 @@ export async function getListUserPagination(pages, sophantutrang) {
     throw error.message;
   }
 }
-export const updateUserInfor = async (taiKhoan) => {
-  try {
-      const response = await baseAPI.put("/QuanLyNguoiDung/CapNhatThongTinNguoiDung", taiKhoan)
-      return response.data.content
-  } catch (error) {
-      alert(error.response.data.content)
-      throw error.response.data.content
-  }
-}

@@ -25,8 +25,11 @@ export const getUserInfor = async () => {
     throw error.response.data;
   }
 };
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 9bc64714eeef07375b6aad673f226d167baf7c12
 export async function getListUser() {
   try {
     const resp = await baseAPI.get("/QuanLyNguoiDung/LayDanhSachNguoiDung", {
@@ -135,14 +138,5 @@ export async function getListUserPagination(pages, sophantutrang) {
       throw error.response?.data?.content;
     }
     throw error.message;
-  }
-}
-export const updateUserInfor = async (taiKhoan) => {
-  try {
-      const response = await baseAPI.put("/QuanLyNguoiDung/CapNhatThongTinNguoiDung", taiKhoan)
-      return response.data.content
-  } catch (error) {
-      alert(error.response.data.content)
-      throw error.response.data.content
   }
 }
