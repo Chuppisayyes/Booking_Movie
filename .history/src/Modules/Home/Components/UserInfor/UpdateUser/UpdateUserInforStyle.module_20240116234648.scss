@@ -1,0 +1,44 @@
+.jss1{
+    margin: 100px 30px 100px 270px;
+    .jss2{
+        background-color: cadetblue;
+        color: white;
+        margin: 20px 0;
+        display: flex;
+        align-items: center;
+        &:hover{
+            background-color: rgb(76, 135, 137);
+        }
+    }
+    .jss3{
+        background-color: rgb(212, 21, 21);
+        color: white;
+        margin: 20px 0;
+        display: flex;
+        align-items: center;
+        &:hover{
+            background-color: rgb(176, 12, 12);
+        }
+    }
+    .jss4{
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+        cursor: pointer;
+        transition: all 0.5s;
+        &:hover{
+            color: blue;
+        }
+    }
+    .jss5{
+        @extend .jss4;
+        &:hover{
+            color: red;
+        }
+    }
+    .jss6{
+        padding: 10px;
+        margin: 0 5px;
+    }
+
+}
